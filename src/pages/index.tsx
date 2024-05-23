@@ -9,6 +9,7 @@ export default function Home() {
     <div>
       <p>My home</p>
       <Link href="/sign/up">to Singup page</Link>
+      <Link href="/sign/in">to Singin page</Link>
     </div>
   );
 }

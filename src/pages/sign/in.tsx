@@ -9,28 +9,20 @@ const FormItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <section className="grid w-full items-center gap-1.5">{children}</section>
 );
 
-const SignUp: NextPageWithLayout = () => {
+const SignIn: NextPageWithLayout = () => {
   const { toast } = useToast();
-  const onSignUp = (): void => {
+  const onSignIn = (): void => {
     toast({
-      title: "サインアップに成功しました！",
-      description: "ようこそ、負けない株式投資の世界へ。",
+      title: "サインインに成功しました！",
+      description: "おかえりなさい、{ニックネーム}さん。今日も勝ちましょうね。",
       variant: "success",
     });
   };
 
   return (
     <div>
-      <h1 className="text-3xl">サインアップ</h1>
+      <h1 className="text-3xl">サインイン</h1>
       <div className="grid gap-6 py-4">
-        <FormItem>
-          <Label htmlFor="nickname">ニックネーム</Label>
-          <Input
-            type="text"
-            id="nickname"
-            placeholder="あなたのよく呼ばれる名前を入力"
-          />
-        </FormItem>
         <FormItem>
           <Label htmlFor="email">メールアドレス</Label>
           <Input type="email" id="email" placeholder="メールアドレスを入力" />
@@ -41,14 +33,14 @@ const SignUp: NextPageWithLayout = () => {
         </div>
       </div>
       <div className="flex justify-end">
-        <Button type="button" size="lg" onClick={onSignUp}>
-          登録する
+        <Button type="button" size="lg" onClick={onSignIn}>
+          ログイン
         </Button>
       </div>
     </div>
   );
 };
 
-SignUp.getLayout = SignLayout;
+SignIn.getLayout = SignLayout;
 
-export default SignUp;
+export default SignIn;
